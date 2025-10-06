@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub - Home</title>
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts: Poppins (headings), Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header id="navbar-container"></header>
+<div id="search-overlay" class="search-overlay">
+    <div class="search-form-container">
+        <!-- <button id="close-search" class="close-search-btn"><i class="fa-solid fa-times"></i></button> -->
+        <form id="global-search-form" class="d-flex w-100">
+            <input type="search" id="search-input" class="form-control form-control-lg me-2" placeholder="Search for products..." aria-label="Search">
+            <button type="submit" class="btn btn-accent-custom btn-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+</div>
+    <main class="flex-grow-1">
+         <!-- Hero Section - Carousel Banner -->
+    <section id="hero-section" class="hero-carousel carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero-section" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#hero-section" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('images/1.jpg');">
+                <div class="carousel-caption d-none d-md-block"> <!-- d-none d-md-block to hide caption on small screens if it overlaps too much -->
+                    <h5 class="animated fadeInDown">New Arrivals 2024</h5>
+                    <p class="animated fadeInUp">Discover the latest trends in fashion and elevate your style with our exclusive collection.</p>
+                    <a href="products.html" class="btn btn-accent-custom btn-lg animated fadeInUp">Shop Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('images/2.jpg');">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="animated fadeInDown">Up to 50% Off on Selected Items</h5>
+                    <p class="animated fadeInUp">Don't miss out on our incredible discounts. Limited time offer!</p>
+                    <a href="products.html" class="btn btn-primary-custom btn-lg animated fadeInUp">View Sale <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-section" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-section" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </section>
+
+        <!-- Features Section -->
+        <section class="py-5 bg-primary-light">
+            <div class="container">
+                <div class="row text-center g-4">
+                    <div class="col-md-4 animated fadeInUp" style="animation-delay: 0.1s;">
+                        <div class="feature-box">
+                            <div class="icon mb-3"><i class="fa-solid fa-truck fa-icon-large"></i></div>
+                            <h4>Free Shipping</h4>
+                            <p class="text-muted-gray mb-0">On all orders over $100</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animated fadeInUp" style="animation-delay: 0.2s;">
+                        <div class="feature-box">
+                            <div class="icon mb-3"><i class="fa-solid fa-shield-halved fa-icon-large"></i></div>
+                            <h4>Secure Payments</h4>
+                            <p class="text-muted-gray mb-0">100% protected by SSL</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animated fadeInUp" style="animation-delay: 0.3s;">
+                        <div class="feature-box">
+                            <div class="icon mb-3"><i class="fa-solid fa-headset fa-icon-large"></i></div>
+                            <h4>24/7 Support</h4>
+                            <p class="text-muted-gray mb-0">Dedicated customer service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold animated fadeInDown">Featured Products</h2>
+                    <p class="lead text-muted-gray animated fadeInUp" style="animation-delay: 0.2s;">Hand-picked for you, our top sellers and new arrivals.</p>
+                </div>
+                <div id="featured-products-grid" class="row">
+                    <!-- Products will be loaded here dynamically -->
+                </div>
+                <div class="text-center mt-5">
+                    <a href="products.html" class="btn btn-outline-primary-custom btn-lg animated fadeInUp" style="animation-delay: 0.4s;">View All Products <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Banner 2 -->
+        <section class="py-5 bg-accent-red text-white text-center">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-3 animated fadeInDown">Limited Time Offer!</h2>
+                <p class="lead mb-4 animated fadeInUp" style="animation-delay: 0.2s;">Get an extra 20% off your first purchase with code: FASHION20</p>
+                <a href="products.html" class="btn btn-primary-custom btn-lg animated fadeInUp" style="animation-delay: 0.4s;">Shop Now!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <!-- Bootstrap JS Bundle (popper.js included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script> 
+
+</body>
+</html>

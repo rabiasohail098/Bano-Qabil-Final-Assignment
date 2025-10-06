@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - FashionHub</title>
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header id="navbar-container"></header>
+<div id="search-overlay" class="search-overlay">
+    <div class="search-form-container">
+        <!-- <button id="close-search" class="close-search-btn"><i class="fa-solid fa-times"></i></button> -->
+        <form id="global-search-form" class="d-flex w-100">
+            <input type="search" id="search-input" class="form-control form-control-lg me-2" placeholder="Search for products..." aria-label="Search">
+            <button type="submit" class="btn btn-accent-custom btn-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+</div>
+    <main class="flex-grow-1 py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-center mb-5 animated fadeInDown">Your Shopping Cart</h1>
+
+            <div id="cart-content" class="row">
+                <!-- Cart items will be dynamically loaded here -->
+                <!-- Example of Empty Cart State -->
+                <div id="empty-cart-message" class="col-12 text-center py-5 d-none">
+                    <img src="images/10.png" alt="Empty Cart" class="img-fluid mb-4" style="max-width: 200px;">
+                    <h2 class="text-muted-gray mb-3">Your cart is empty!</h2>
+                    <p class="lead text-muted-gray mb-4">Looks like you haven't added anything to your cart yet.</p>
+                    <a href="products.html" class="btn btn-primary-custom btn-lg">Start Shopping</a>
+                </div>
+
+                <!-- Cart Items List (initial hidden state) -->
+                <div id="cart-items-list" class="col-lg-8 animated fadeInUp">
+                    <!-- Individual cart items will be rendered here -->
+                </div>
+
+                <!-- Order Summary (initial hidden state) -->
+                <div id="order-summary" class="col-lg-4 animated fadeInUp">
+                    <div class="order-summary-card">
+                        <h2 class="h4 fw-bold mb-4">Order Summary</h2>
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-muted-gray">Subtotal:</span>
+                                <span id="cart-subtotal" class="fw-bold">$0.00</span>
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-muted-gray">Shipping:</span>
+                                <span class="fw-bold text-success">Free</span>
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center pt-3 border-top mt-3">
+                                <span class="h5 fw-bold mb-0">Total:</span>
+                                <span id="cart-total" class="total-price">$0.00</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-accent-custom btn-lg w-100 mb-3">Proceed to Checkout</button>
+                        <a href="products.html" class="btn btn-outline-primary-custom btn-lg w-100">Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+
+</body>
+</html>

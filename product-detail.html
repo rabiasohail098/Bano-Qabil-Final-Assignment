@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - FashionHub</title>
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header id="navbar-container"></header>
+<div id="search-overlay" class="search-overlay">
+    <div class="search-form-container">
+        <!-- <button id="close-search" class="close-search-btn"><i class="fa-solid fa-times"></i></button> -->
+        <form id="global-search-form" class="d-flex w-100">
+            <input type="search" id="search-input" class="form-control form-control-lg me-2" placeholder="Search for products..." aria-label="Search">
+            <button type="submit" class="btn btn-accent-custom btn-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+</div>
+    <main class="flex-grow-1 py-5">
+        <div class="container product-detail-section">
+            <div id="product-detail-container">
+                <!-- Product details will be loaded here dynamically -->
+                <!-- Skeleton loading will appear here -->
+                <div class="row g-5">
+                    <div class="col-md-6">
+                        <div class="skeleton-detail-img skeleton-loading"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="skeleton-text skeleton-title skeleton-loading"></div>
+                        <div class="skeleton-text w-25 skeleton-loading"></div>
+                        <div class="skeleton-text skeleton-price w-50 skeleton-loading"></div>
+                        <div class="skeleton-text w-100 skeleton-loading" style="height: 120px;"></div>
+                        <div class="skeleton-text w-75 skeleton-loading"></div>
+                        <div class="d-flex gap-3 mt-4">
+                            <div class="btn btn-accent-custom btn-lg w-100 skeleton-loading" style="height: 50px;"></div>
+                            <div class="btn btn-outline-primary-custom btn-lg w-100 skeleton-loading" style="height: 50px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+   
+   
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FashionHub</title>
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts: Poppins (headings), Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- NAVBAR CONTAINER - Make sure this exists and has the correct ID -->
+    <header id="navbar-container"></header>
+<div id="search-overlay" class="search-overlay">
+    <div class="search-form-container">
+        <!-- <button id="close-search" class="close-search-btn"><i class="fa-solid fa-times"></i></button> -->
+        <form id="global-search-form" class="d-flex w-100">
+            <input type="search" id="search-input" class="form-control form-control-lg me-2" placeholder="Search for products..." aria-label="Search">
+            <button type="submit" class="btn btn-accent-custom btn-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+</div>
+    <main class="flex-grow-1">
+        <!-- Page Header -->
+        <section class="bg-primary-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold mb-3 animated fadeInDown">Get In Touch</h1>
+                <p class="lead text-muted-gray animated fadeInUp" style="animation-delay: 0.2s;">Have questions? We're here to help!</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section py-5">
+            <div class="container">
+                <div class="row g-5 justify-content-center">
+                    <!-- Contact Information -->
+                    <div class="col-lg-5 col-md-6 animated fadeInLeft">
+                        <div class="contact-info-card h-100">
+                            <h3>Our Details</h3>
+                            <p>Feel free to reach out to us using the information below or fill out the form.</p>
+                            <ul class="mt-4">
+                                <li><i class="fa-solid fa-location-dot fa-icon me-2"></i> 123 Fashion Street, New York, NY 10001</li>
+                                <li><i class="fa-solid fa-phone fa-icon me-2"></i> +1 (555) 123-4567</li>
+                                <li><i class="fa-solid fa-envelope fa-icon me-2"></i> info@fashionhub.com</li>
+                            </ul>
+                            <div class="social-links mt-4">
+                                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f fa-icon"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter fa-icon"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram fa-icon"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="col-lg-7 col-md-6 animated fadeInRight">
+                        <div class="contact-form-card h-100">
+                            <h3>Send Us a Message</h3>
+                            <form id="contact-form" class="mt-4">
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label form-label-custom">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Your Full Name" required minlength="2">
+                                    <div class="invalid-feedback-custom" id="fullNameFeedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label form-label-custom">Email Address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                                    <div class="invalid-feedback-custom" id="emailFeedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label form-label-custom">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="How can we help you?" required minlength="10"></textarea>
+                                    <div class="invalid-feedback-custom" id="messageFeedback"></div>
+                                </div>
+                                <button type="submit" class="btn btn-accent-custom btn-lg w-100 mt-3">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER CONTAINER - Make sure this exists and has the correct ID -->
+    <footer id="footer-container"></footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+  
+</body>
+</html>

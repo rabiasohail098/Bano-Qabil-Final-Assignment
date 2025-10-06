@@ -1,0 +1,960 @@
+
+:root {
+    --bs-font-sans-serif: 'Poppins', sans-serif;
+    --bs-body-color: #333333;
+    --bs-body-bg: #ffffff;
+
+    --primary-dark: #1a1a1a;
+    --primary-light: #f8f8f8;
+    --accent-pink: #e91e63; /* Deep Pink, inspired by templates */
+    --accent-red: #ff3366; /* Bright Red/Pink, a common template accent */
+    --text-muted-gray: #6c757d;
+    --border-light: #eeeeee;
+
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+
+    --transition-fast: all 0.2s ease-in-out;
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', sans-serif !important; /* Apply directly and importantly */
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--bs-font-sans-serif) !important; /* Apply directly and importantly */
+    color: var(--primary-dark);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+a:hover {
+    color: var(--accent-red);
+    text-decoration: none;
+}
+
+/* --- Font Awesome Icon Styling --- */
+.fa-icon { /* General class for FA icons where custom size/color needed */
+    display: inline-block; /* Helps with vertical alignment */
+    line-height: 1; /* Aligns vertically better with text */
+}
+.icon-small { font-size: 1.1rem; } /* For list items, smaller elements */
+.icon-medium { font-size: 1.4rem; } /* For nav icons, buttons */
+.icon-large { font-size: 2rem; } /* For feature boxes */
+.icon-xl { font-size: 2.5rem; } /* For very large icons if needed */
+
+/* Ensure icon colors are consistent */
+.text-primary-dark .fa-icon,
+.btn-link .fa-icon {
+    color: var(--primary-dark) !important;
+}
+.text-accent-red .fa-icon {
+    color: var(--accent-red) !important;
+}
+/* Ensure icons within buttons inherit button text color */
+.btn .fa-icon {
+    color: inherit !important;
+}
+
+
+/* --- Custom Bootstrap Buttons (Inspired by templates) --- */
+.btn-primary-custom {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    border: 1px solid var(--primary-dark);
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    border-radius: 0.375rem; /* Bootstrap's default */
+    transition: var(--transition-normal);
+}
+.btn-primary-custom:hover {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+    color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.btn-accent-custom {
+    background-color: var(--accent-red);
+    color: var(--primary-light);
+    border: 1px solid var(--accent-red);
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    transition: var(--transition-normal);
+}
+.btn-accent-custom:hover {
+    background-color: #e62e5b; /* Slightly darker */
+    border-color: #e62e5b;
+    color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.btn-outline-primary-custom {
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-dark);
+    background-color: transparent;
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    transition: var(--transition-normal);
+}
+.btn-outline-primary-custom:hover {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+
+/* --- General Utility Classes --- */
+/* !important added for higher specificity */
+.text-primary-dark { color: var(--primary-dark) !important; }
+.text-primary-light { color: var(--primary-light) !important; }
+.text-accent-red { color: var(--accent-red) !important; }
+.bg-primary-dark { background-color: var(--primary-dark) !important; }
+.bg-primary-light { background-color: var(--primary-light) !important; }
+.bg-accent-red { background-color: var(--accent-red) !important; }
+.text-muted-gray { color: var(--text-muted-gray) !important; }
+.border-light { border-color: var(--border-light) !important; }
+
+
+/* --- Navbar Styling --- */
+.navbar-custom {
+    background-color: var(--primary-light);
+    box-shadow: 0 2px 10px var(--shadow-light);
+    padding: 1rem 0;
+    z-index: 1030; /* Bootstrap's navbar z-index */
+}
+.navbar-brand-custom {
+    font-family: var(--bs-font-sans-serif) !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+.navbar-brand-custom .accent-logo {
+    color: var(--accent-red);
+}
+.navbar-nav .nav-link {
+    color: var(--primary-dark) !important; /* Ensure nav link color is applied */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: var(--transition-fast);
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--accent-red) !important; /* Ensure hover/active color is applied */
+}
+/* Underline effect for nav links */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-red);
+    transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 70%; /* Adjust width as desired */
+}
+/* Navbar toggler icon */
+.navbar-toggler {
+    border: none;
+    font-size: 1.5rem; /* For Font Awesome icon */
+    color: var(--primary-dark);
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-toggler-icon {
+    display: none; /* Hide default Bootstrap icon */
+}
+/* --- Search Overlay Styling --- */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1040; /* Higher than navbar and modals */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-form-container {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    padding: 2rem;
+    background-color: var(--primary-light);
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.search-overlay.active .search-form-container {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.close-search-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--primary-dark);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1041;
+}
+.close-search-btn:hover {
+    color: var(--accent-red);
+}
+
+.search-overlay .form-control-lg {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.375rem;
+    font-size: 1.1rem;
+    border-color: var(--border-light);
+}
+.search-overlay .form-control-lg:focus {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 0.25rem rgba(var(--accent-red), 0.2);
+}
+.search-overlay .btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+}
+.search-overlay .btn .fa-icon {
+    font-size: 1.2rem;
+}
+
+/* Ensure text is visible in search input on dark background */
+.search-overlay .form-control {
+    color: var(--primary-dark); /* Ensure text is dark */
+    background-color: var(--white-color); /* Ensure background is light */
+}
+.search-overlay .form-control::placeholder {
+    color: var(--text-muted-gray);
+}
+
+/* --- Hero Section (Carousel) --- */
+.hero-carousel .carousel-item {
+    height: 80vh; /* Ya koi fixed height set karein, example: 600px */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Make sure this is set */
+    display: flex; /* For centering content vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Default for carousel text */
+    overflow: hidden; /* Important for animations */
+    transition: transform 0.6s ease-in-out; 
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+.hero-carousel .carousel-inner {
+    height: 100%; /* Ensure inner has height for items */
+}
+/* For Fade effect, Bootstrap automatically adds this: */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  transform: none; /* Override default transform for slide */
+}
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+}
+
+/* Ensure caption is positioned correctly and doesn't get cut off */
+.hero-carousel .carousel-caption {
+    position: absolute; /* Default for Bootstrap captions */
+    right: 15%; /* Default for Bootstrap captions */
+    left: 15%; /* Default for Bootstrap captions */
+    /* bottom: 1.25rem; Default for Bootstrap captions */
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+    z-index: 1; /* Ensure it's above the overlay */
+    
+    /* Center content in caption */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 10rem; /* Important: Override default bottom to span full height */
+    bottom: 0; /* Important: Override default bottom to span full height */
+    left: 0; right: 0; /* Important: Span full width */
+    width: 70%; /* Adjust width if needed */
+    margin: auto; /* Center it horizontally */
+}
+/* Specific text colors for carousel caption elements */
+.hero-carousel .carousel-caption h5 {
+    color: white; /* Ensure heading is white */
+    font-family: var(--bs-font-sans-serif) !important;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); 
+
+}
+.hero-carousel .carousel-caption p {
+    color: #e62e5b !important; /* Slightly faded white for paragraph */
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin-bottom: 1rem;
+}
+
+
+/* Animation styles for content inside caption */
+/* Jab carousel item active ho tab animations trigger hon */
+.hero-carousel .carousel-item.active .animated {
+    animation-delay: 0.5s; /* Global delay for all animations in active slide */
+    animation-fill-mode: forwards; /* Animation state last frame par rukega */
+}
+.hero-carousel .carousel-item.active .fadeInDown {
+    animation-name: fadeInDown;
+   
+}
+.hero-carousel .carousel-item.active .fadeInUp {
+    animation-name: fadeInUp;
+    animation-delay: 0.8s; /* Specific delay for p tag */
+}
+.hero-carousel .carousel-item.active .btn.animated {
+    animation-name: fadeInUp;
+    animation-delay: 1.2s; /* Specific delay for button */
+}
+
+/* Reset animations for inactive items to prevent content overlap */
+.hero-carousel .carousel-item:not(.active) .animated {
+    animation: none !important; /* Animations ko inactive items par disable karein */
+    opacity: 0; /* Content ko hide rakhen */
+    transform: none !important; /* Transform effects ko reset karein */
+}
+
+/* Small screen adjustments for captions */
+@media (max-width: 767.98px) {
+    .hero-carousel .carousel-item {
+        height: 60vh; /* Adjust height for smaller screens */
+    }
+    .hero-carousel .carousel-caption {
+        width: 90%; /* Caption width on small screens */
+        padding: 1rem;
+        position: relative; /* Position relative taaki flexbox centering kaam kare */
+        left: 0; right: 0; bottom: 0; top: 0;
+        margin: auto;
+    }
+    .hero-carousel .carousel-caption h5 {
+        font-size: 2rem !important;
+    }
+    .hero-carousel .carousel-caption p {
+        font-size: 1rem !important;
+    }
+    .hero-carousel .carousel-caption .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+
+/* --- Product Card Styling --- */
+.product-card-custom {
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: var(--transition-normal);
+}
+.product-card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+}
+.product-card-custom .card-img-top {
+    height: 280px; /* Consistent image height */
+    object-fit: cover;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+.product-card-custom:hover .card-img-top {
+    transform: scale(1.05);
+}
+.product-card-custom .card-body {
+    padding: 1.5rem;
+}
+.product-card-custom .card-title {
+    font-family: var(--bs-font-sans-serif) !important;
+    font-size: 1.15rem;
+    font-weight: 600;
+    min-height: 50px; /* Ensure consistent title height */
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    color: var(--primary-dark) !important;
+}
+.product-card-custom .card-price {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    margin-bottom: 1rem;
+}
+.product-card-custom .btn {
+    width: 100%;
+}
+
+/* --- Product Detail Page --- */
+.product-detail-img {
+    height: 500px;
+    object-fit: contain;
+    background-color: var(--primary-light);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%; /* Ensure it fills column width */
+}
+.product-detail-section h1 {
+    font-family: var(--bs-font-sans-serif) !important;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-dark) !important;
+}
+.product-detail-section .category-tag {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.product-detail-section .price {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    margin-bottom: 1.5rem;
+}
+.product-detail-section .description {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-muted-gray);
+}
+.product-detail-section .add-to-cart-btn {
+    margin-top: 2rem;
+}
+
+/* --- Cart Page --- */
+.cart-item-card {
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+.cart-item-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background-color: var(--primary-light);
+    border-radius: 0.25rem;
+}
+.cart-item-title {
+    font-family: var(--bs-font-sans-serif) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-dark) !important;
+}
+.cart-item-price {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700;
+    color: var(--accent-red);
+}
+.quantity-control .btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+.order-summary-card {
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background-color: var(--primary-light);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    position: sticky;
+    top: 80px; /* Adjust based on navbar height */
+}
+.order-summary-card .h4 {
+    font-family: var(--bs-font-sans-serif) !important;
+    color: var(--primary-dark) !important;
+}
+.order-summary-card .text-muted-gray { /* For "Subtotal", "Shipping" */
+    font-family: 'Inter', sans-serif !important;
+}
+.order-summary-card .fw-bold { /* For values like "$100.00", "Free" */
+    font-family: 'Inter', sans-serif !important;
+    color: var(--primary-dark) !important;
+}
+.order-summary-card .total-price {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-red);
+}
+.empty-cart-message {
+    text-align: center;
+    padding: 3rem 0;
+}
+.empty-cart-message h2 {
+    font-family: var(--bs-font-sans-serif) !important;
+    color: var(--text-muted-gray) !important;
+    margin-bottom: 1.5rem;
+}
+.empty-cart-message p {
+    font-family: 'Inter', sans-serif !important;
+}
+
+
+/* --- About Page --- */
+.about-section {
+    padding: 4rem 0;
+}
+.about-section h2 {
+    font-family: var(--bs-font-sans-serif) !important;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark) !important;
+}
+.about-section p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted-gray);
+}
+.about-image {
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 25px var(--shadow-light);
+    width: 100%; /* Ensure it fills column width */
+    height: 70vh;
+}
+/* --- CSS for NEW About Page Sections --- */
+
+/* Mission & Vision Section */
+.mission-vision-section {
+    padding: 5rem 0;
+    background-color: var(--primary-dark); /* Dark background for contrast */
+    color: var(--primary-light);
+    text-align: center;
+}
+.mission-vision-section h2 {
+    color: var(--primary-light) !important;
+    margin-bottom: 2rem;
+}
+.mission-vision-section p {
+    color: rgba(255, 255, 255, 0.8) !important;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+.mission-vision-section .vision-icon {
+    font-size: 3.5rem;
+    color: var(--accent-red);
+    margin-bottom: 1.5rem;
+}
+
+/* Team Section (Optional/Placeholder) */
+.team-section {
+    padding: 5rem 0;
+    text-align: center;
+    background-color: var(--primary-light);
+}
+.team-section h2 {
+    margin-bottom: 3rem;
+}
+.team-member-card {
+    border: none;
+    background-color: var(--white-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: var(--transition-normal);
+    height: 100%;
+    padding: 1.5rem;
+}
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+}
+.team-member-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--accent-red);
+    padding: 3px; /* Inner padding for border */
+}
+.team-member-card h5 {
+    color: var(--primary-dark) !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.team-member-card p.title {
+    color: var(--text-muted-gray) !important;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+.team-member-card .social-icons a {
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    transition: var(--transition-fast);
+}
+.team-member-card .social-icons a:hover {
+    color: var(--accent-red);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 5rem 0;
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    text-align: center;
+}
+.testimonials-section h2 {
+    color: var(--primary-light) !important;
+    margin-bottom: 3rem;
+}
+.testimonial-card {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+.testimonial-card i.quote-icon {
+    font-size: 3rem;
+    color: var(--accent-red);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+.testimonial-card p.review-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted-gray) !important;
+    line-height: 1.7;
+}
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+    border: 2px solid var(--accent-red);
+}
+.testimonial-card h5.reviewer-name {
+    color: var(--primary-dark) !important;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.testimonial-card span.reviewer-title {
+    font-size: 0.9rem;
+    color: var(--text-muted-gray) !important;
+}
+
+/* Call to Action Section */
+.cta-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--accent-red);
+    color: var(--primary-light);
+}
+.cta-section h2 {
+    color: var(--primary-light) !important;
+    margin-bottom: 1.5rem;
+}
+.cta-section p {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+.feature-box {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-light);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: var(--transition-normal);
+    height: 100%; /* For consistent height in grid */
+}
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-hover);
+}
+.feature-box .icon {
+    font-size: 2.5rem; /* For Font Awesome icons */
+    color: var(--accent-red);
+    margin-bottom: 1rem;
+}
+.feature-box h4 {
+    font-family: var(--bs-font-sans-serif) !important;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-dark) !important;
+}
+.feature-box p {
+    font-family: 'Inter', sans-serif !important;
+}
+
+
+/* --- Contact Page --- */
+.contact-section {
+    padding: 4rem 0;
+}
+.contact-info-card {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+}
+.contact-info-card h3 {
+    font-family: var(--bs-font-sans-serif) !important;
+    color: var(--primary-light);
+    margin-bottom: 1.5rem;
+}
+.contact-info-card p {
+    font-family: 'Inter', sans-serif !important;
+    color: rgba(255, 255, 255, 0.7);
+}
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-info-card ul li {
+    font-family: 'Inter', sans-serif !important;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+.contact-info-card ul li .fa-icon { /* Font Awesome icons inside li */
+    margin-right: 1rem;
+    color: var(--accent-red);
+    flex-shrink: 0;
+    font-size: 1.2em; /* Adjust size relative to text */
+    line-height: inherit; /* Align with text */
+}
+.contact-form-card {
+    background-color: var(--primary-light);
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px var(--shadow-light);
+}
+.contact-form-card h3 {
+    font-family: var(--bs-font-sans-serif) !important;
+    color: var(--primary-dark) !important;
+}
+.contact-form-card .form-control {
+    border-color: var(--border-light);
+    padding: 0.8rem 1rem;
+    font-family: 'Inter', sans-serif !important;
+    color: var(--primary-dark) !important;
+}
+.contact-form-card .form-control::placeholder {
+    color: var(--text-muted-gray);
+    opacity: 1; /* Firefox default opacity */
+}
+.contact-form-card .form-control:focus {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 0.25rem rgba(var(--accent-red), 0.2);
+}
+.form-label-custom {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+.is-invalid-custom {
+    border-color: #dc3545 !important;
+}
+.invalid-feedback-custom {
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+}
+
+
+/* --- Footer Styling --- */
+.footer-custom {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    padding: 3rem 0;
+}
+.footer-custom h4 {
+    font-family: var(--bs-font-sans-serif) !important;
+    color: var(--primary-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+.footer-custom p, .footer-custom li, .footer-custom a {
+    font-family: 'Inter', sans-serif !important;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+.footer-custom a:hover {
+    color: var(--accent-red);
+}
+.footer-custom .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 0.8rem;
+    color: var(--primary-light);
+    transition: var(--transition-fast);
+}
+.footer-custom .social-links a:hover {
+    background-color: var(--accent-red);
+}
+.footer-custom .social-links a .fa-icon { /* Font Awesome icons inside social links */
+    color: var(--primary-light);
+    font-size: 1.1rem;
+}
+.footer-custom .social-links a:hover .fa-icon {
+    color: var(--primary-light); /* Keep white on hover for contrast */
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.animated.fadeIn { animation-name: fadeIn; }
+.animated.fadeInDown { animation-name: fadeInDown; }
+.animated.fadeInUp { animation-name: fadeInUp; }
+/* Visible class to trigger animation when in viewport */
+.animated.visible {
+    animation-fill-mode: both;
+}
+
+
+/* --- Loading Skeleton --- */
+.skeleton-loading {
+    background-color: #e0e0e0;
+    animation: pulse 1.5s infinite linear;
+    border-radius: 4px;
+}
+@keyframes pulse {
+    0% { background-color: #e0e0e0; }
+    50% { background-color: #f0f0f0; }
+    100% { background-color: #e0e0e0; }
+}
+.skeleton-box { background-color: #e0e0e0; }
+.skeleton-text { height: 18px; margin-bottom: 8px; }
+.skeleton-title { height: 25px; width: 80%; margin-bottom: 10px; }
+.skeleton-price { height: 22px; width: 50%; margin-bottom: 10px; }
+.skeleton-img-placeholder { height: 280px; width: 100%; background-color: #f0f0f0; }
+.skeleton-detail-img { height: 400px; width: 100%; background-color: #f0f0f0; }
+
+/* Toast Notifications (simple version) */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1080; /* Above Bootstrap modals */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.custom-toast {
+    background-color: white;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+.custom-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.custom-toast.success { border-left: 5px solid #28a745; }
+.custom-toast.error { border-left: 5px solid #dc3545; }
+.custom-toast.info { border-left: 5px solid #007bff; }
+.custom-toast-icon { font-size: 1.5rem; } /* If you decide to add specific icons to toast */
+.custom-toast-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: auto;
+    color: var(--text-muted-gray);
+}
