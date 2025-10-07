@@ -415,7 +415,7 @@ a:hover {
   margin-bottom: 20px;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+  background-color: #fafafa; 
   border-bottom: 1px solid #eee;
   padding: 10px;
 }
@@ -448,18 +448,30 @@ a:hover {
 @media (max-width: 992px) {
   .product-img-container {
     height: 200px;
+      background-color: #fafafa; 
+  border-bottom: 1px solid #eee;
   }
+
 }
 
 @media (max-width: 768px) {
   .product-img-container {
     height: 180px;
+      background-color: #fafafa; 
+  border-bottom: 1px solid #eee;
   }
 }
 
 @media (max-width: 576px) {
   .product-img-container {
-    height: 160px;
+    height: 160px;  background-color: #fafafa; 
+  border-bottom: 1px solid #eee;
+  }
+    .custom-product-card{
+    margin-bottom: 30px; 
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #fff;
   }
 }
 

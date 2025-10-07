@@ -270,7 +270,7 @@ function createProductCard(product) {
     return `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-4">
           <div class="custom-product-card card shadow-sm border-0 h-100">
-            <div class="product-img-container">
+            <div class="product-img-container bg-#eee">
               <img src="${product.image}" alt="${product.title}" class="img-fluid product-img">
             </div>
             <div class="card-body d-flex flex-column">
