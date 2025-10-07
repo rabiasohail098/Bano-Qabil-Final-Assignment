@@ -268,17 +268,25 @@ const defaultProductImage = 'assets/images/placeholder.jpg'; // Placeholder imag
 
 function createProductCard(product) {
     return `
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card product-card-custom h-100">
-                <a href="product-detail.html?id=${product.id}">
-                    <img src="${product.image || defaultProductImage}" class="card-img-top" alt="${product.title}">
-                </a>
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">${product.title}</h5>
-                    <p class="card-price mt-auto">$${product.price ? product.price.toFixed(2) : '0.00'}</p>
-                    <a href="product-detail.html?id=${product.id}" class="btn btn-primary-custom">View Details</a>
-                </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-4">
+          <div class="custom-product-card card shadow-sm border-0 h-100">
+            <div class="product-img-container">
+              <img src="${product.image}" alt="${product.title}" class="img-fluid product-img">
             </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${product.title}</h5>
+              <p class="card-text text-muted small flex-grow-1">
+                ${product.description.substring(0, 80)}...
+              </p>
+              <div class="d-flex justify-content-between align-items-center mt-auto">
+                <span class="text-accent-red fw-bold">$${product.price}</span>
+                <a href="product-detail.html?id=${product.id}" 
+                   class="btn btn-primary-custom btn-sm">
+                   View Details
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
     `;
 }
